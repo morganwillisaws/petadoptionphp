@@ -10,7 +10,7 @@ If you are using a Lightsail LAMP instance, the following user data instructions
 cd /opt/bitnami/apache2/htdocs
 rm -rf *
 # Clone the application code to the server
-sudo git clone https://github.com/mtw16/petadoptionphp.git .
+sudo git clone https://github.com/morganwillisaws/petadoptionphp.git .
 # Create a directory for the database configuration files
 sudo mkdir /opt/bitnami/apache2/configs && \
 sudo chown bitnami:bitnami /opt/bitnami/apache2/configs
