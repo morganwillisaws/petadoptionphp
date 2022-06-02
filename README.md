@@ -6,15 +6,10 @@ The parameters for the database connectivity and image hosting (hostname, userna
 
 If you are using a Lightsail LAMP instance, the following user data instructions will take care of everything you need for the initial install of the app.
 
-# Delete the default web page installed by Bitnumi.
 cd /opt/bitnami/apache2/htdocs
 rm -rf *
-# Clone the application code to the server
 sudo git clone https://github.com/morganwillisaws/petadoptionphp.git .
-# Create a directory for the database configuration files
 sudo mkdir /opt/bitnami/apache2/configs && \
 sudo chown bitnami:bitnami /opt/bitnami/apache2/configs
-# Move the config.php file to the configuration directory
 sudo mv /opt/bitnami/apache2/htdocs/config.php /opt/bitnami/apache2/configs/config.php
-# Create a database
 cat /home/bitnami/htdocs/data/init.sql | /opt/bitnami/mariadb/bin/mysql -u root -p$(cat /home/bitnami/bitnami_application_password)
