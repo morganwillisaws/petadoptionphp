@@ -7,9 +7,14 @@ The parameters for the database connectivity and image hosting (hostname, userna
 If you are using a Lightsail LAMP instance, the following user data instructions will take care of everything you need for the initial install of the app.
 
 cd /opt/bitnami/apache2/htdocs
+
 rm -rf *
+
 sudo git clone https://github.com/morganwillisaws/petadoptionphp.git .
+
 sudo mkdir /opt/bitnami/apache2/configs && \
 sudo chown bitnami:bitnami /opt/bitnami/apache2/configs
+
 sudo mv /opt/bitnami/apache2/htdocs/config.php /opt/bitnami/apache2/configs/config.php
+
 cat /home/bitnami/htdocs/data/init.sql | /opt/bitnami/mariadb/bin/mysql -u root -p$(cat /home/bitnami/bitnami_application_password)
